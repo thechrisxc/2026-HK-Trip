@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🇭🇰 Hong Kong 2026 · Vol.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#F5F1EB; --bg2:#EDE7DC; --ink:#2C2418; --ink2:#5A4E3C; --ink3:#9A8A72;
+  --gold:#9C7A3C; --line:rgba(44,36,24,0.10);
+  --hi-photo:rgba(115,130,155,0.18); --hi-food:rgba(160,130,95,0.18);
+  --hi-sunset:rgba(185,115,80,0.20); --hi-night:rgba(90,100,130,0.18);
+  --dot-photo:#7382A0; --dot-food:#A08260; --dot-sunset:#B97350; --dot-night:#5A6482;
+  --c-photo:#5E6E88; --c-food:#8A6E4A; --c-sunset:#9A5A38; --c-night:#4A5470; --ic:#5A4E3C;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1E1A14; --bg2:#2A241C; --ink:#EDE4D4; --ink2:#BFB09A; --ink3:#7A6C58;
+  --gold:#C49A52; --line:rgba(237,228,212,0.10);
+  --hi-photo:rgba(115,130,155,0.22); --hi-food:rgba(180,150,105,0.20);
+  --hi-sunset:rgba(200,130,90,0.22); --hi-night:rgba(110,125,165,0.22);
+  --dot-photo:#8898B8; --dot-food:#C09870; --dot-sunset:#D08860; --dot-night:#7880A8;
+  --c-photo:#8898B8; --c-food:#C09870; --c-sunset:#D08860; --c-night:#8890B8; --ic:#BFB09A;
+}}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','PingFang TC','Hiragino Sans GB','Microsoft YaHei',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.ic{display:inline-block;width:14px;height:14px;flex-shrink:0;stroke:var(--ic);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;}
+.ic-sm{width:12px;height:12px;} .ic-lg{width:16px;height:16px;}
+
+/* LANG TOGGLE */
+.lang-toggle{position:fixed;top:58px;right:14px;z-index:200;display:flex;gap:2px;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:3px;}
+.lang-btn{font-size:11px;font-weight:400;letter-spacing:.04em;color:var(--ink3);background:transparent;border:none;border-radius:16px;padding:4px 10px;cursor:pointer;transition:background .2s,color .2s;}
+.lang-btn.active{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08);}
+
+/* TOP BUTTON */
+.top-btn{position:fixed;bottom:24px;right:16px;z-index:200;width:44px;height:44px;border-radius:50%;background:transparent;border:1.5px solid var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:none;transition:transform .15s,opacity .2s;}
+.top-btn:hover{opacity:.7;transform:scale(1.05);}
+.top-btn svg{stroke:var(--gold);fill:none;width:18px;height:18px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* LANG visibility */
+.lang-zh .en-only{display:none;}
+.lang-en .zh-only{display:none;}
+
+/* HERO */
+.hero{padding:52px 24px 36px;text-align:center;border-bottom:1px solid var(--line);}
+.hero-flag{font-size:56px;line-height:1;display:block;margin-bottom:10px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:300;line-height:1;color:var(--ink);letter-spacing:-0.01em;margin-bottom:48px;}
+.hero-title em{font-style:italic;color:var(--gold);}
+.hero-date{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:0;}
+.hero-eye{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink3);margin-bottom:24px;}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.hero>*{animation:up .5s ease both;}
+.hero-flag{animation-delay:.05s}.hero-title{animation-delay:.1s}.hero-date{animation-delay:.13s}.hero-eye{animation-delay:.16s}
+@media(min-width:480px){.hero-title{font-size:72px}}
+
+/* FLIGHTS */
+.flights-wrap{padding:0 20px;border-bottom:1px solid var(--line);}
+.flights-sec{padding:10px 0 0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);display:flex;align-items:center;gap:5px;}
+.flight-row{display:flex;align-items:flex-start;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);}
+.flight-row:last-child{border-bottom:none;}
+.f-dir{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px;}
+.f-route{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);}
+.f-time{font-size:12px;color:var(--ink2);margin-top:1px;}
+.f-detail{font-size:11px;color:var(--ink3);margin-top:2px;}
+.f-right{text-align:right;}
+.f-num{font-size:13px;font-weight:500;color:var(--gold);display:block;margin-bottom:2px;}
+.f-airline{font-size:11px;color:var(--ink3);}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:flex;overflow-x:hidden;padding:0;}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{flex:1;padding:12px 4px;font-size:10px;color:var(--ink3);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;text-align:center;}
+.nav a:hover,.nav a.on{color:var(--ink);border-bottom-color:var(--gold);}
+
+/* DAY */
+.day{border-bottom:1px solid var(--line);}
+.day-head{padding:30px 20px 18px;border-bottom:1px solid var(--line);}
+.day-tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.day-title{font-family:'Songti SC','STSong','SimSun','Georgia',serif;font-size:28px;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:10px;}
+.day-sub{font-size:12px;color:var(--ink3);}
+.hotel-bar{padding:11px 20px;border-bottom:1px solid var(--line);font-size:12px;color:var(--ink2);display:flex;align-items:center;gap:8px;}
+.hotel-bar strong{color:var(--ink);font-weight:500;}
+.sec-lbl{padding:7px 20px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);border-bottom:1px solid var(--line);border-top:1px solid var(--line);text-align:center;}
+
+/* TIMELINE */
+.tl{padding:2px 0;}
+.row{display:flex;}
+.row-left{width:72px;flex-shrink:0;padding:15px 6px 15px 18px;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.row-t-val{font-size:12px;font-weight:400;color:var(--ink);letter-spacing:.02em;}
+.row-t-dur{font-size:10px;color:var(--ink3);}
+.type-badge{font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:400;padding:1px 5px;border-radius:10px;white-space:nowrap;margin-top:2px;}
+.badge-photo{background:var(--hi-photo);color:var(--c-photo);}
+.badge-food{background:var(--hi-food);color:var(--c-food);}
+.badge-sunset{background:var(--hi-sunset);color:var(--c-sunset);}
+.badge-night{background:var(--hi-night);color:var(--c-night);}
+.badge-plain{color:var(--ink3);border:1px solid rgba(154,138,114,0.4);padding:0px 4px;}
+.badge-booked{background:rgba(156,122,60,0.2);color:var(--gold);border:1px solid rgba(156,122,60,0.4);padding:0px 4px;}
+.row-spine{width:24px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;padding-top:19px;}
+.dot{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg2);flex-shrink:0;z-index:1;}
+.vert{width:1px;flex:1;min-height:18px;background:var(--line);}
+.row-c{flex:1;padding:13px 20px 13px 5px;border-bottom:1px solid var(--line);}
+.row:last-child .row-c{border-bottom:none;}
+.row.photo .dot{border-color:var(--dot-photo);background:color-mix(in srgb,var(--dot-photo) 10%,var(--bg));}
+.row.food .dot{border-color:var(--dot-food);background:color-mix(in srgb,var(--dot-food) 10%,var(--bg));}
+.row.night .dot{border-color:var(--dot-night);background:color-mix(in srgb,var(--dot-night) 10%,var(--bg));}
+.row.sunset .dot{border-color:var(--dot-sunset);background:color-mix(in srgb,var(--dot-sunset) 10%,var(--bg));}
+.row-name{font-family:'Songti SC','STSong','SimSun','Georgia',serif;font-size:15px;font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:2px;text-decoration:none;display:block;transition:color .15s;}
+a.row-name:hover{color:var(--gold);}
+.row-name.sunset{color:var(--c-sunset);}
+.row-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--ink3);margin-bottom:4px;display:block;}
+.row-note{font-size:12px;color:var(--ink2);line-height:1.55;}
+.row-note b{font-weight:500;color:var(--ink);}
+.row-tx{font-size:11px;color:var(--ink3);margin-top:4px;}
+
+/* sub-links */
+.sub-links{display:flex;flex-direction:column;gap:3px;margin-top:6px;}
+.sub-link{font-size:12px;color:var(--ink2);text-decoration:none;display:flex;align-items:center;gap:4px;}
+.sub-link:hover{color:var(--gold);}
+.sub-link-dot{width:4px;height:4px;border-radius:50%;background:var(--ink3);flex-shrink:0;}
+
+/* INFO */
+.info-sec{padding:26px 20px;border-bottom:1px solid var(--line);}
+.sec-title{font-family:'Songti SC','STSong','SimSun','Georgia',serif;font-size:26px;font-weight:400;margin-bottom:18px;color:var(--ink);}
+.sec-title .en-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink2);font-weight:300;margin-left:6px;}
+.irow{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);}
+.irow:last-child{border-bottom:none;}
+.irow-lbl{width:88px;flex-shrink:0;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);padding-top:2px;}
+.irow-val{flex:1;font-size:13px;color:var(--ink2);line-height:1.5;}
+.irow-val b{color:var(--ink);font-weight:500;}
+.frow{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+.frow:last-child{border-bottom:none;}
+.f-ico{width:20px;height:20px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
+.f-body{flex:1;}
+.f-name{font-family:'Songti SC','STSong','SimSun','Georgia',serif;font-size:14px;font-weight:400;color:var(--ink);text-decoration:none;display:block;}
+.f-name:hover{color:var(--gold);}
+.f-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--ink3);margin-bottom:3px;}
+.f-desc{font-size:12px;color:var(--ink2);line-height:1.5;}
+.f-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);border:1px solid var(--line);border-radius:20px;padding:2px 8px;flex-shrink:0;align-self:flex-start;white-space:nowrap;}
+
+footer{padding:24px 20px 80px;text-align:center;font-size:12px;color:var(--ink3);border-top:1px solid var(--line);}
+footer strong{color:var(--ink2);font-weight:500;}
+.footer-ig{display:inline-block;margin-top:5px;font-size:9px;color:var(--ink3);text-decoration:none;letter-spacing:.06em;transition:color .2s;font-family:"Cochin","Palatino Linotype","Book Antiqua",Palatino,serif;font-style:normal;font-weight:300;opacity:.7;text-transform:uppercase;}
+.footer-ig:hover{color:var(--gold);}
+@media(min-width:480px){.row-left{width:80px}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 2 16.5 3.5L13 7 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+  <symbol id="ic-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+  <symbol id="ic-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+  <symbol id="ic-coffee" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+  <symbol id="ic-train" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/></svg>
+  <symbol id="ic-ship" viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v6"/><path d="M12 3v4"/></svg>
+  <symbol id="ic-sunset" viewBox="0 0 24 24"><path d="M12 10V2"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 18a4 4 0 1 1 8 0"/><path d="M16 18H8"/></svg>
+  <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+  <symbol id="ic-hotel" viewBox="0 0 24 24"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/><path d="m9 22 .01-4"/><path d="m15 22 .01-4"/><path d="M9 14H6"/><path d="M9 10H6"/><path d="M9 6H6"/><path d="M18 6h-3"/><path d="M18 10h-3"/><path d="M18 14h-3"/></svg>
+  <symbol id="ic-cable-car" viewBox="0 0 24 24"><path d="M10 3h.01"/><path d="M14 2h.01"/><path d="m2 9 20-5"/><path d="M12 12V6.5"/><rect x="6" y="12" width="12" height="8" rx="1"/><path d="M9 12v8"/><path d="M15 12v8"/><path d="M12 16h0"/></svg>
+  <symbol id="ic-walk" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 2-5"/><path d="m9 14-3 1"/><path d="m15 11 3 2"/></svg>
+  <symbol id="ic-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+  <symbol id="ic-warning" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+  <symbol id="ic-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+  <symbol id="ic-bread" viewBox="0 0 24 24"><path d="M3 11v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3"/><path d="M12 19H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3.83"/><path d="m3 11 7.77-6.04a2 2 0 0 1 2.46 0L21 11H3Z"/></svg>
+  <symbol id="ic-teapot" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/></svg>
+  <symbol id="ic-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+  <symbol id="ic-ship2" viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v6"/><path d="M12 3v4"/><path d="m11 4-1 1"/><path d="m13 4 1 1"/></svg>
+  <symbol id="ic-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+</svg>
+
+<div id="app" class="lang-zh">
+
+<!-- LANG TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- TOP BUTTON -->
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到頂部">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <span class="hero-flag">🇭🇰</span>
+  <h1 class="hero-title">Hong <em>Kong</em></h1>
+  <p class="hero-date zh-only">香港旅遊行程</p>
+  <p class="hero-date en-only">Hong Kong Travel Itinerary</p>
+</section>
+
+<!-- FLIGHTS -->
+<div style="padding:0 20px;border-bottom:1px solid var(--line);">
+  <div style="padding:10px 0 0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);display:flex;align-items:center;gap:5px;">
+    <svg class="ic ic-sm"><use href="#ic-plane"/></svg>
+    <span class="zh-only">班機</span><span class="en-only">Flights</span>
+  </div>
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);">
+    <div>
+      <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px;"><span class="zh-only">去程</span><span class="en-only">Outbound</span></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);">TPE → HKG</div>
+      <div style="font-size:12px;color:var(--ink2);margin-top:1px;">11:30 → 13:30 · Sat, May 9</div>
+      <div style="font-size:11px;color:var(--ink3);margin-top:2px;"><span class="zh-only">台灣桃園國際機場 T1 → 香港國際機場 T1</span><span class="en-only">Taiwan Taoyuan Intl Airport T1 → HK Intl Airport T1</span></div>
+    </div>
+    <div style="text-align:right;">
+      <span style="font-size:13px;font-weight:500;color:var(--gold);display:block;margin-bottom:2px;">HB703</span>
+      <span style="font-size:11px;color:var(--ink3);"><span class="zh-only">大灣航空</span><span class="en-only">Greater Bay Airlines</span></span>
+    </div>
+  </div>
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:13px 0;">
+    <div>
+      <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px;"><span class="zh-only">回程</span><span class="en-only">Return</span></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);">HKG → TPE</div>
+      <div style="font-size:12px;color:var(--ink2);margin-top:1px;">23:25 → 01:25<span style="font-size:10px;vertical-align:super;">+1</span> · Wed, May 13</div>
+      <div style="font-size:11px;color:var(--ink3);margin-top:2px;"><span class="zh-only">香港國際機場 T1 → 台灣桃園國際機場 T1</span><span class="en-only">HK Intl Airport T1 → Taiwan Taoyuan Intl Airport T1</span></div>
+    </div>
+    <div style="text-align:right;">
+      <span style="font-size:13px;font-weight:500;color:var(--gold);display:block;margin-bottom:2px;">HB710</span>
+      <span style="font-size:11px;color:var(--ink3);"><span class="zh-only">大灣航空</span><span class="en-only">Greater Bay Airlines</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#day1"><span class="zh-only">第一天</span><span class="en-only">Day 1</span></a>
+  <a href="#day2"><span class="zh-only">第二天</span><span class="en-only">Day 2</span></a>
+  <a href="#day3"><span class="zh-only">第三天</span><span class="en-only">Day 3</span></a>
+  <a href="#day4"><span class="zh-only">第四天</span><span class="en-only">Day 4</span></a>
+  <a href="#day5"><span class="zh-only">第五天</span><span class="en-only">Day 5</span></a>
+  <a href="#food"><span class="zh-only">食物</span><span class="en-only">Food</span></a>
+  <a href="#info"><span class="zh-only">備注</span><span class="en-only">Info</span></a>
+</nav>
+
+<!-- ═══ DAY 1 ═══ -->
+<section class="day" id="day1">
+  <div class="day-head">
+    <div class="day-tag">Day 1 · Sat, May 9</div>
+    <h2 class="day-title zh-only">第一天</h2>
+    <h2 class="day-title en-only">Day 1</h2>
+    <p class="day-sub zh-only">灣仔</p>
+    <p class="day-sub en-only">Wan Chai</p>
+  </div>
+  <div class="hotel-bar">
+    <svg class="ic"><use href="#ic-hotel"/></svg>
+    <a href="https://maps.app.goo.gl/gwdynA9i52oE6AHL8" target="_blank" style="color:var(--ink);text-decoration:none;">
+      <strong class="zh-only">灣景國際</strong><strong class="en-only">The Harbourview</strong>
+    </a>
+  </div>
+  <div class="tl">
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">13:30</span><span class="row-t-dur">55m</span><span class="type-badge badge-plain zh-only">交通</span><span class="type-badge badge-plain en-only">Transit</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">機場 → 灣仔</div>
+        <div class="row-name en-only">Airport → Wan Chai</div>
+        <div class="row-tx zh-only">機場快線→香港站→MTR 灣仔站 · 辦八達通 HKD 150</div>
+        <div class="row-tx en-only">Airport Express → HK Station → MTR Wan Chai · Get Octopus Card HKD 150</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">14:30</span><span class="row-t-dur">30m</span><span class="type-badge badge-plain zh-only">住宿</span><span class="type-badge badge-plain en-only">Hotel</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">飯店 Check in</div>
+        <div class="row-name en-only">Check in</div>
+        <div class="row-note zh-only"><a href="https://maps.app.goo.gl/gwdynA9i52oE6AHL8" target="_blank" style="color:var(--ink2);text-decoration:none;">灣景國際</a></div>
+        <div class="row-note en-only"><a href="https://maps.app.goo.gl/gwdynA9i52oE6AHL8" target="_blank" style="color:var(--ink2);text-decoration:none;">The Harbourview</a></div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">15:00</span><span class="row-t-dur">1h</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/PXJxGBgKs5LwuzVg6" target="_blank">
+          <span class="zh-only">發達叉燒</span><span class="en-only">FAT J Char Siu</span>
+        </a>
+        <div class="row-note zh-only">西班牙黑毛豬叉燒 · 豬油撈飯</div>
+        <div class="row-note en-only">Iberico Char Siu · Lard Rice</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">16:05</span><span class="row-t-dur">20m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/TjnEStXcsK1XXNyg7" target="_blank">
+          <span class="zh-only">拍照點</span><span class="en-only">Photo Spot</span>
+        </a>
+        <div class="row-note zh-only">天橋往下拍馬路</div>
+        <div class="row-note en-only">Shoot down from the overpass onto the street</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">16:30</span><span class="row-t-dur">20m</span><span class="type-badge badge-plain zh-only">交通</span><span class="type-badge badge-plain en-only">Transit</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/3zssNYw6ZbzJpS9h9" target="_blank">
+          <span class="zh-only">山頂纜車站</span><span class="en-only">Peak Tram Station</span>
+        </a>
+        <div class="row-tx zh-only">MTR 20 分</div>
+        <div class="row-tx en-only">MTR 20 min</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">16:50</span><span class="row-t-dur">25m</span><span class="type-badge badge-booked zh-only">已預訂</span><span class="type-badge badge-booked en-only">Booked</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">山頂纜車 🚠</div>
+        <div class="row-name en-only">Peak Tram 🚠</div>
+        <div class="row-tx zh-only">HKD 88 來回</div>
+        <div class="row-tx en-only">HKD 88 return</div>
+
+
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">17:00</span><span class="row-t-dur">30m</span><span class="type-badge badge-booked zh-only">已預訂</span><span class="type-badge badge-booked en-only">Booked</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/EezeVjAiry89pbMg8" target="_blank">
+          <span class="zh-only">凌霄閣摩天台428</span><span class="en-only">Sky Terrace 428</span>
+        </a>
+        <div class="row-note zh-only">山頂最高觀景台 · 已購票含入場</div>
+        <div class="row-note en-only">Highest viewing platform · Included with tram ticket</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">17:45</span><span class="row-t-dur">15m</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/8CRiHV2iZ5wK5MnX8" target="_blank">
+          <span class="zh-only">Bakehouse 山頂</span><span class="en-only">Bakehouse The Peak</span>
+        </a>
+        <div class="row-note zh-only">蛋塔</div>
+        <div class="row-note en-only">Egg Tart</div>
+      </div>
+    </div>
+
+    <div class="row night">
+      <div class="row-left"><span class="row-t-val">18:05</span><span class="row-t-dur">55m</span><span class="type-badge badge-night zh-only">夜景</span><span class="type-badge badge-night en-only">Night</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/M17NJ9fJiM4CU3uW7" target="_blank">
+          <span class="zh-only">盧吉道觀景台</span><span class="en-only">Lugard Road Lookout</span>
+        </a>
+        
+        <div class="row-note zh-only">360 度維港夜景 · 日落 18:55 · 待到 19:15</div>
+        <div class="row-note en-only">360° Victoria Harbour · Sunset 18:55 · Stay until 19:15</div>
+      </div>
+    </div>
+
+    <div class="row night">
+      <div class="row-left"><span class="row-t-val">19:30</span><span class="row-t-dur">1h</span><span class="type-badge badge-night zh-only">景點</span><span class="type-badge badge-night en-only">Spot</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/DFsjEyRKa3Cqxiur7" target="_blank">
+          <span class="zh-only">蘭桂坊</span><span class="en-only">Lan Kwai Fong</span>
+        </a>
+        <div class="row-tx zh-only">下山 15 分</div>
+        <div class="row-tx en-only">15 min down</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">21:00</span><span class="type-badge badge-plain zh-only">住宿</span><span class="type-badge badge-plain en-only">Hotel</span></div>
+      <div class="row-spine"><div class="dot"></div></div>
+      <div class="row-c" style="border-bottom:none">
+        <div class="row-name zh-only">返回飯店</div>
+        <div class="row-name en-only">Return to Hotel</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/gwdynA9i52oE6AHL8" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">灣景國際</span><span class="en-only">The Harbourview</span></a></div>
+        <div class="row-tx zh-only">MTR 中環→灣仔 1 站 10 分</div>
+        <div class="row-tx en-only">MTR Central→Wan Chai 1 stop 10 min</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ DAY 2 ═══ -->
+<section class="day" id="day2">
+  <div class="day-head">
+    <div class="day-tag">Day 2 · Sun, May 10</div>
+    <h2 class="day-title zh-only">第二天</h2>
+    <h2 class="day-title en-only">Day 2</h2>
+    <p class="day-sub zh-only">鰂魚涌 · 灣仔 · 堅尼地城 · 西環</p>
+    <p class="day-sub en-only">Quarry Bay · Wan Chai · Kennedy Town · Sai Wan</p>
+  </div>
+  <div class="hotel-bar">
+    <svg class="ic"><use href="#ic-hotel"/></svg>
+    <a href="https://maps.app.goo.gl/FSrBncUJrVAp8trr5" target="_blank" style="color:var(--ink);text-decoration:none;">
+      <strong class="zh-only">Page148 精品酒店</strong><strong class="en-only">Page148 - Page Hotels</strong>
+    </a>
+  </div>
+  <div class="tl">
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">09:00</span><span class="row-t-dur">45m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/Y1wtemAS1UqPBnqx5" target="_blank">
+          <span class="zh-only">怪獸大廈</span><span class="en-only">Monster Building</span>
+        </a>
+        <span class="row-en zh-only">益昌大廈</span>
+        <span class="row-en en-only">Yick Cheong Building</span>
+        <div class="row-note zh-only">《變形金剛4》拍攝地 · <b>機位需排隊等候</b> · 請保持安靜</div>
+        <div class="row-note en-only">Transformers: Age of Extinction filming location · <b>Queue for the shot</b> · Please be quiet</div>
+        <div class="row-tx zh-only">MTR 灣仔→鰂魚涌 15 分 + 步行 5 分</div>
+        <div class="row-tx en-only">MTR Wan Chai→Quarry Bay 15 min + 5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">10:05</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/tkhURXnehhPVvKke6" target="_blank">
+          <span class="zh-only">拍照點</span><span class="en-only">Photo Spot</span>
+        </a>
+        <div class="row-note zh-only">復古小電視機裝置</div>
+        <div class="row-note en-only">Retro miniature TV art installation</div>
+        <div class="row-tx zh-only">MTR 鰂魚涌→灣仔 + 步行 20 分</div>
+        <div class="row-tx en-only">MTR Quarry Bay→Wan Chai + 20 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">10:55</span><span class="row-t-dur">20m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/xY4rMGgKxw5QgB8UA" target="_blank">
+          <span class="zh-only">灣仔海濱花園</span><span class="en-only">Wan Chai Harbour Promenade</span>
+        </a>
+        <div class="row-tx zh-only">步行 15 分</div>
+        <div class="row-tx en-only">15 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">11:30</span><span class="row-t-dur">45m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/oaZcJYcj4nJLJjAJ6" target="_blank">
+          <span class="zh-only">海濱站</span><span class="en-only">Harbour Station</span>
+        </a>
+        <div class="row-note zh-only">退役烏蠅頭列車取景</div>
+        <div class="row-note en-only">Retired EMU trains on display</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">12:20</span><span class="row-t-dur">1h 30m</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/QtuNatS2MKYYMUnz5" target="_blank">
+          <span class="zh-only">竺扶大班燒味</span><span class="en-only">Chukfo Taipan Restaurant</span>
+        </a>
+        <div class="row-note zh-only">叉燒燒鵝飯</div>
+        <div class="row-note en-only">Char Siu · Roast Goose Rice</div>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">14:00</span><span class="row-t-dur">30m</span><span class="type-badge badge-plain zh-only">購物</span><span class="type-badge badge-plain en-only">Shop</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/3QVubbDTkGP5prN27" target="_blank">
+          <span class="zh-only">鴻興玩具</span><span class="en-only">Hung Hing Toys</span>
+        </a>
+        <div class="row-note zh-only">模型汽車 · 伴手禮</div>
+        <div class="row-note en-only">Model cars · Souvenirs</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">14:35</span><span class="row-t-dur">40m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/6d7qd8kqFkTqQv586" target="_blank">Winstons Coffee</a>
+        <div class="row-note zh-only">咖啡廳招牌取景</div>
+        <div class="row-note en-only">Café signage photo spot</div>
+        <div class="row-tx zh-only">MTR 鰂魚涌→堅尼地城 25 分 + 步行 5 分</div>
+        <div class="row-tx en-only">MTR Quarry Bay→Kennedy Town 25 min + 5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">15:55</span><span class="row-t-dur">35m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/dBmqRtgv3hDrT9dq6" target="_blank">
+          <span class="zh-only">堅尼地城籃球場</span><span class="en-only">Kennedy Town Basketball Courts</span>
+        </a>
+        <div class="row-note zh-only">從籃球場鐵絲網拍攝</div>
+        <div class="row-note en-only">Shoot through the chain-link fence</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">16:35</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/34fdKryjrf2Hw33K7" target="_blank">
+          <span class="zh-only">堅彌地城新海旁</span><span class="en-only">New Praya, Kennedy Town</span>
+        </a>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row sunset">
+      <div class="row-left"><span class="row-t-val">17:10</span><span class="row-t-dur">35m</span><span class="type-badge badge-sunset zh-only">懸日</span><span class="type-badge badge-sunset en-only">Sunset</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name sunset" href="https://maps.app.goo.gl/BTY9VSk1n2THb7Be9" target="_blank">
+          <span class="zh-only">港大附近</span><span class="en-only">HKU Area</span>
+        </a>
+        <div class="row-note zh-only">17:20 拍攝 · 待到 17:45</div>
+        <div class="row-note en-only">Shoot at 17:20 · Stay until 17:45</div>
+        <div class="row-tx zh-only">步行→西營盤站 15 分</div>
+        <div class="row-tx en-only">15 min walk to Sai Ying Pun Station</div>
+      </div>
+    </div>
+
+    <div class="row sunset">
+      <div class="row-left"><span class="row-t-val">18:05</span><span class="row-t-dur">30m</span><span class="type-badge badge-sunset zh-only">日落</span><span class="type-badge badge-sunset en-only">Sunset</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name sunset" href="https://maps.app.goo.gl/HMCJvmTmZMj9LhBF9" target="_blank">
+          <span class="zh-only">鐘聲泳棚</span><span class="en-only">Bell Sound Swimming Shed</span>
+        </a>
+        <div class="row-note zh-only">18:30 前到位 · 日落 18:55</div>
+        <div class="row-note en-only">Arrive before 18:30 · Sunset 18:55</div>
+        <div class="row-tx zh-only">MTR 西營盤→堅尼地城 5 分 + 步行 15 分</div>
+        <div class="row-tx en-only">MTR Sai Ying Pun→Kennedy Town 5 min + 15 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">19:15</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/dBmqRtgv3hDrT9dq6" target="_blank">
+          <span class="zh-only">堅尼地城籃球場</span><span class="en-only">Kennedy Town Basketball Courts</span>
+        </a>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">19:55</span><span class="row-t-dur">30m</span><span class="type-badge badge-plain zh-only">交通</span><span class="type-badge badge-plain en-only">Transit</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">堅尼地城 → 灣仔</div>
+        <div class="row-name en-only">Kennedy Town → Wan Chai</div>
+        <div class="row-note zh-only">取行李</div>
+        <div class="row-note en-only">Pick up luggage</div>
+        <div class="row-tx zh-only">MTR 30 分</div>
+        <div class="row-tx en-only">MTR 30 min</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">20:25</span><span class="row-t-dur">15m</span><span class="type-badge badge-plain zh-only">行李</span><span class="type-badge badge-plain en-only">Luggage</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">取行李</div>
+        <div class="row-name en-only">Pick up luggage</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/gwdynA9i52oE6AHL8" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">灣景國際</span><span class="en-only">The Harbourview</span></a></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">20:40</span><span class="row-t-dur">20m</span><span class="type-badge badge-plain zh-only">換住宿</span><span class="type-badge badge-plain en-only">Hotel</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">飯店 Check in</div>
+        <div class="row-name en-only">Check in</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/FSrBncUJrVAp8trr5" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">Page148 精品酒店</span><span class="en-only">Page148</span></a></div>
+        <div class="row-tx zh-only">MTR 20 分</div>
+        <div class="row-tx en-only">MTR 20 min</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">21:00</span><span class="row-t-dur">1h</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div></div>
+      <div class="row-c" style="border-bottom:none">
+        <div class="row-name zh-only">澳洲牛奶公司 / 麥文記麵家</div>
+        <div class="row-name en-only">Australia Dairy Co. / Mak Man Kee</div>
+        <div class="sub-links">
+          <a class="sub-link" href="https://maps.app.goo.gl/XMqWADSpASz3U2oPA" target="_blank"><span class="sub-link-dot"></span><span class="zh-only">澳洲牛奶公司</span><span class="en-only">Australia Dairy Company</span></a>
+          <a class="sub-link" href="https://maps.app.goo.gl/wKrHc6GcCtuHPeBN9" target="_blank"><span class="sub-link-dot"></span><span class="zh-only">麥文記麵家</span><span class="en-only">Mak Man Kee Noodle Shop</span></a>
+        </div>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ DAY 3 ═══ -->
+<section class="day" id="day3">
+  <div class="day-head">
+    <div class="day-tag">Day 3 · Mon, May 11</div>
+    <h2 class="day-title zh-only">第三天</h2>
+    <h2 class="day-title en-only">Day 3</h2>
+    <p class="day-sub zh-only">大嶼山 · 尖沙咀</p>
+    <p class="day-sub en-only">Lantau Island · Tsim Sha Tsui</p>
+  </div>
+  <div class="hotel-bar">
+    <svg class="ic"><use href="#ic-hotel"/></svg>
+    <a href="https://maps.app.goo.gl/FSrBncUJrVAp8trr5" target="_blank" style="color:var(--ink);text-decoration:none;">
+      <strong class="zh-only">Page148 精品酒店</strong><strong class="en-only">Page148 - Page Hotels</strong>
+    </a>
+  </div>
+
+  <div class="sec-lbl zh-only">大嶼山</div>
+  <div class="sec-lbl en-only">Lantau Island</div>
+  <div class="tl">
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">08:40</span><span class="row-t-dur">45m</span><span class="type-badge badge-plain zh-only">交通</span><span class="type-badge badge-plain en-only">Transit</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">尖沙咀 → 東涌</div>
+        <div class="row-name en-only">TST → Tung Chung</div>
+        <div class="row-tx zh-only">MTR 荃灣綫→青衣換東涌綫 · 09:25 抵達東涌站</div>
+        <div class="row-tx en-only">MTR Tsuen Wan Line → change at Tsing Yi to Tung Chung Line · Arrive 09:25</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">09:25</span><span class="row-t-dur">25m</span><span class="type-badge badge-booked zh-only">已預訂</span><span class="type-badge badge-booked en-only">Booked</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/w1ZiwmNjmRrS985B9" target="_blank">
+          <span class="zh-only">昂坪360</span><span class="en-only">Ngong Ping 360</span>
+        </a>
+        <div class="row-note zh-only"><b>10:00 開放</b> · 水晶底艙 · 25 分鐘</div>
+        <div class="row-note en-only"><b>Opens 10:00</b> · Crystal Plus cabin · 25 min</div>
+        <div class="row-tx zh-only">步行→纜車站 10 分</div>
+        <div class="row-tx en-only">10 min walk to cable car station</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">10:30</span><span class="row-t-dur">3h</span><span class="type-badge badge-photo zh-only">景點</span><span class="type-badge badge-photo en-only">Spot</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/NzwEwK6umkDpKnhw8" target="_blank">
+          <span class="zh-only">天壇大佛</span><span class="en-only">Tian Tan Buddha</span>
+        </a>
+        <div class="row-note zh-only">爬 268 階台階 · 免費入場</div>
+        <div class="row-note en-only">268 steps · Free entry</div>
+        <div class="row-tx zh-only">昂坪村步行 5 分</div>
+        <div class="row-tx en-only">5 min walk from Ngong Ping Village</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">13:30</span><span class="row-t-dur">30m</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/MvumH9mpQcgfy9fr7" target="_blank">
+          <span class="zh-only">昂坪市集</span><span class="en-only">Ngong Ping Village</span>
+        </a>
+        <div class="row-note zh-only">素食齋飯 · 市集小食</div>
+        <div class="row-note en-only">Vegetarian food · Village snacks</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">14:05</span><span class="row-t-dur">25m</span><span class="type-badge badge-plain zh-only">纜車</span><span class="type-badge badge-plain en-only">Cable Car</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/w1ZiwmNjmRrS985B9" target="_blank">
+          <span class="zh-only">昂坪360</span><span class="en-only">Ngong Ping 360</span>
+        </a>
+        <div class="row-note zh-only">下山 · 回程普通艙</div>
+        <div class="row-note en-only">Descent · Standard cabin</div>
+        <div class="row-tx zh-only">步行→纜車站 5 分 + 纜車 25 分</div>
+        <div class="row-tx en-only">5 min walk to station + 25 min cable car</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">14:35</span><span class="row-t-dur">50m</span><span class="type-badge badge-plain zh-only">交通</span><span class="type-badge badge-plain en-only">Transit</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">東涌 → 尖沙咀</div>
+        <div class="row-name en-only">Tung Chung → TST</div>
+        <div class="row-tx zh-only">MTR 東涌綫→青衣換荃灣綫 約 50 分</div>
+        <div class="row-tx en-only">MTR Tung Chung Line → change at Tsing Yi to Tsuen Wan Line ~50 min</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sec-lbl zh-only">尖沙咀</div>
+  <div class="sec-lbl en-only">Tsim Sha Tsui</div>
+  <div class="tl">
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">15:25</span><span class="row-t-dur">20m</span><span class="type-badge badge-plain zh-only">住宿</span><span class="type-badge badge-plain en-only">Hotel</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">返回飯店</div>
+        <div class="row-name en-only">Return to Hotel</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/FSrBncUJrVAp8trr5" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">Page148</span><span class="en-only">Page148</span></a></div>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">15:55</span><span class="row-t-dur">30m</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/ZFxC5DW4NyPTiXNs5" target="_blank">
+          <span class="zh-only">祥興記上海生煎包</span><span class="en-only">Cheung Hing Kee Shanghai Pan Fried Buns</span>
+        </a>
+        <div class="row-note zh-only">現煎生煎包</div>
+        <div class="row-note en-only">Fresh pan-fried buns</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">16:25</span><span class="row-t-dur">45m</span><span class="type-badge badge-booked zh-only">已預訂</span><span class="type-badge badge-booked en-only">Booked</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/raLDWFTQgPMFEHEHA" target="_blank">Cupping Room Coffee</a>
+        <div class="row-note zh-only">海景落地窗咖啡廳取景</div>
+        <div class="row-note en-only">Harbour view café photo spot</div>
+        <div class="row-tx zh-only">步行→海港城 15 分</div>
+        <div class="row-tx en-only">15 min walk to Harbour City</div>
+      </div>
+    </div>
+
+    <div class="row sunset">
+      <div class="row-left"><span class="row-t-val">17:25</span><span class="row-t-dur">1h 30m</span><span class="type-badge badge-sunset zh-only">日落</span><span class="type-badge badge-sunset en-only">Sunset</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name sunset" href="https://maps.app.goo.gl/xYvYLR1XGgjjLZC67" target="_blank">
+          <span class="zh-only">海港城</span><span class="en-only">Harbour City</span>
+        </a>
+        <div class="row-note zh-only">日落預計 18:55 · 待到 19:15</div>
+        <div class="row-note en-only">Sunset approx. 18:55 · Stay until 19:15</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row night">
+      <div class="row-left"><span class="row-t-val">19:25</span><span class="row-t-dur">30m</span><span class="type-badge badge-night zh-only">夜景</span><span class="type-badge badge-night en-only">Night</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/mQNM3uTjDCicWqic6" target="_blank">
+          <span class="zh-only">星光大道</span><span class="en-only">Avenue of Stars</span>
+        </a>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row night">
+      <div class="row-left"><span class="row-t-val">20:35</span><span class="row-t-dur">45m</span><span class="type-badge badge-booked zh-only">已預訂</span><span class="type-badge badge-booked en-only">Booked</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">維多利亞港夜景豪華夢之旅</div>
+        <div class="row-name en-only">Victoria Harbour Night Cruise</div>
+        <div class="row-note zh-only">20:35 出發 · 45 分鐘</div>
+        <div class="row-note en-only">Departs 20:35 · 45 minutes</div>
+        <div class="row-tx zh-only">步行→碼頭 10 分 · 20:20 到位</div>
+        <div class="row-tx en-only">10 min walk to pier · Arrive 20:20</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">21:20</span><span class="type-badge badge-plain zh-only">住宿</span><span class="type-badge badge-plain en-only">Hotel</span></div>
+      <div class="row-spine"><div class="dot"></div></div>
+      <div class="row-c" style="border-bottom:none">
+        <div class="row-name zh-only">返回飯店</div>
+        <div class="row-name en-only">Return to Hotel</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/FSrBncUJrVAp8trr5" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">Page148</span><span class="en-only">Page148</span></a></div>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ DAY 4 ═══ -->
+<section class="day" id="day4">
+  <div class="day-head">
+    <div class="day-tag">Day 4 · Tue, May 12</div>
+    <h2 class="day-title zh-only">第四天</h2>
+    <h2 class="day-title en-only">Day 4</h2>
+    <p class="day-sub zh-only">中環 · 尖沙咀</p>
+    <p class="day-sub en-only">Central · Tsim Sha Tsui</p>
+  </div>
+  <div class="hotel-bar">
+    <svg class="ic"><use href="#ic-hotel"/></svg>
+    <a href="https://maps.app.goo.gl/WkG2HqEvLxdt9P4EA" target="_blank" style="color:var(--ink);text-decoration:none;">
+      <strong class="zh-only">城景國際 The Cityview</strong><strong class="en-only">The Cityview</strong>
+    </a>
+  </div>
+  <div class="tl">
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">09:00</span><span class="row-t-dur">25m</span><span class="type-badge badge-plain zh-only">小輪</span><span class="type-badge badge-plain en-only">Ferry</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/azZUyhV6NwbT64ug7" target="_blank">
+          <span class="zh-only">天星小輪 · 尖沙咀 → 中環</span><span class="en-only">Star Ferry · TST → Central</span>
+        </a>
+        <div class="row-note zh-only">HKD 4.2 上層 · 7 分鐘</div>
+        <div class="row-note en-only">HKD 4.2 upper deck · 7 min crossing</div>
+        <div class="row-tx zh-only">步行→碼頭 10 分</div>
+        <div class="row-tx en-only">10 min walk to pier</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">09:35</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/BP1Q9i33XzuXqXCt9" target="_blank">
+          <span class="zh-only">中環九號碼頭</span><span class="en-only">Central Pier No.9</span>
+        </a>
+        <div class="row-note zh-only">碼頭可拍摩天輪</div>
+        <div class="row-note en-only">Great angle for the Ferris Wheel</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">10:10</span><span class="row-t-dur">15m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/VsLetSpXNqej5sHHA" target="_blank">
+          <span class="zh-only">拍照點</span><span class="en-only">Photo Spot</span>
+        </a>
+        <div class="row-note zh-only">所有目的地指標</div>
+        <div class="row-note en-only">All Destinations overpass signage</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">10:30</span><span class="row-t-dur">3h</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/headmiUUmf91cvQk6" target="_blank">
+          <span class="zh-only">中環街市</span><span class="en-only">Central Market</span>
+        </a>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">13:35</span><span class="row-t-dur">25m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/Z35X8xoVd6vcoEDF7" target="_blank">
+          <span class="zh-only">中環半山扶手電梯</span><span class="en-only">Central-Mid-Levels Escalators</span>
+        </a>
+        <div class="row-note zh-only">世界最長戶外扶手電梯 800m</div>
+        <div class="row-note en-only">World's longest outdoor escalator system 800m</div>
+        <div class="row-tx zh-only">步行 5 分到入口</div>
+        <div class="row-tx en-only">5 min walk to entrance</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">14:05</span><span class="row-t-dur">1h</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/qNbFddzMhupJjHzY6" target="_blank">
+          <span class="zh-only">大館</span><span class="en-only">Tai Kwun</span>
+        </a>
+        <div class="row-note zh-only">前中區警察總部 · 歷史建築</div>
+        <div class="row-note en-only">Former Central Police Station · Heritage building</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">15:10</span><span class="row-t-dur">20m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/PAkuekJYGPiZRpaBA" target="_blank">
+          <span class="zh-only">藝穗會</span><span class="en-only">Fringe Club</span>
+        </a>
+        <div class="row-note zh-only">1892 年紅磚建築</div>
+        <div class="row-note en-only">Historic 1892 red brick building</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">15:35</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/kLavmZgY1zhxc6RS9" target="_blank">
+          <span class="zh-only">鴨巴甸街樓梯</span><span class="en-only">Aberdeen Street Steps</span>
+        </a>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">16:15</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/p3462ixfr5STRVRm6" target="_blank">
+          <span class="zh-only">拍照點</span><span class="en-only">Photo Spot</span>
+        </a>
+        <div class="row-note zh-only">中環地鐵站 J2 · 途經 Louis Vuitton Landmark</div>
+        <div class="row-note en-only">Central MTR Exit J2 · Pass by Louis Vuitton Landmark</div>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row night">
+      <div class="row-left"><span class="row-t-val">16:55</span><span class="row-t-dur">1h 30m</span><span class="type-badge badge-night zh-only">景點</span><span class="type-badge badge-night en-only">Spot</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/TdEACqq4MWNbQQEE8" target="_blank">
+          <span class="zh-only">香港摩天輪</span><span class="en-only">Hong Kong Observation Wheel</span>
+        </a>
+        <div class="row-note zh-only">HKD 20</div>
+        <div class="row-note en-only">HKD 20</div>
+        <div class="row-tx zh-only">步行 15 分</div>
+        <div class="row-tx en-only">15 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">18:40</span><span class="row-t-dur">25m</span><span class="type-badge badge-plain zh-only">小輪</span><span class="type-badge badge-plain en-only">Ferry</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/QTE2RQ12UFHSbSdU9" target="_blank">
+          <span class="zh-only">天星小輪 · 中環 → 尖沙咀</span><span class="en-only">Star Ferry · Central → TST</span>
+        </a>
+        <div class="row-note zh-only">日落 18:55 · 船上欣賞</div>
+        <div class="row-note en-only">Sunset 18:55 · Enjoy from the ferry</div>
+        <div class="row-tx zh-only">步行→碼頭 10 分</div>
+        <div class="row-tx en-only">10 min walk to pier</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">19:15</span><span class="row-t-dur">1h</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/mE88vrE8rc1TZuw59" target="_blank">
+          <span class="zh-only">稻成亞丁</span><span class="en-only">Dab-pa Peking &amp; Szechuan Cuisine</span>
+        </a>
+        <div class="row-note zh-only">北京烤鴨 · 圓方商場</div>
+        <div class="row-note en-only">Peking Duck · Elements Mall</div>
+        <div class="row-tx zh-only">步行→稻成亞丁 20 分</div>
+        <div class="row-tx en-only">20 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">20:35</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/SZe4QmRdBXwWRQCW9" target="_blank">
+          <span class="zh-only">西九藝術公園</span><span class="en-only">West Kowloon Art Park</span>
+        </a>
+        <div class="sub-links">
+          <a class="sub-link" href="https://maps.app.goo.gl/7Gt566iNG2szva9T6" target="_blank"><span class="sub-link-dot"></span><span class="zh-only">拍照點</span><span class="en-only">Photo Spot</span></a>
+        </div>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">21:15</span><span class="row-t-dur">20m</span><span class="type-badge badge-plain zh-only">行李</span><span class="type-badge badge-plain en-only">Luggage</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">取行李</div>
+        <div class="row-name en-only">Pick up luggage</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/FSrBncUJrVAp8trr5" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">Page148</span><span class="en-only">Page148</span></a></div>
+        <div class="row-tx zh-only">叫車 20 分</div>
+        <div class="row-tx en-only">Taxi 20 min</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">21:35</span><span class="row-t-dur">20m</span><span class="type-badge badge-plain zh-only">換住宿</span><span class="type-badge badge-plain en-only">Hotel</span></div>
+      <div class="row-spine"><div class="dot"></div></div>
+      <div class="row-c" style="border-bottom:none">
+        <div class="row-name zh-only">飯店 Check in</div>
+        <div class="row-name en-only">Check in</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/WkG2HqEvLxdt9P4EA" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">城景國際</span><span class="en-only">The Cityview</span></a></div>
+        <div class="row-tx zh-only">MTR 佐敦→油麻地 5 分</div>
+        <div class="row-tx en-only">MTR Jordan → Yau Ma Tei 5 min</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ DAY 5 ═══ -->
+<section class="day" id="day5">
+  <div class="day-head">
+    <div class="day-tag">Day 5 · Wed, May 13 · Departure</div>
+    <h2 class="day-title zh-only">第五天</h2>
+    <h2 class="day-title en-only">Day 5</h2>
+    <p class="day-sub zh-only">油麻地 · 旺角 · 尖沙咀 · 機場</p>
+    <p class="day-sub en-only">Yau Ma Tei · Mong Kok · Tsim Sha Tsui · Airport</p>
+  </div>
+  <div class="hotel-bar">
+    <svg class="ic"><use href="#ic-hotel"/></svg>
+    <a href="https://maps.app.goo.gl/WkG2HqEvLxdt9P4EA" target="_blank" style="color:var(--ink);text-decoration:none;">
+      <strong class="zh-only">城景國際 The Cityview</strong><strong class="en-only">The Cityview</strong>
+    </a>
+  </div>
+  <div class="tl">
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">09:00</span><span class="row-t-dur">1h</span><span class="type-badge badge-plain zh-only">自由</span><span class="type-badge badge-plain en-only">Free</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">油麻地附近閒逛</div>
+        <div class="row-name en-only">Explore Yau Ma Tei</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">10:00</span><span class="row-t-dur">1h 30m</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/vPdK1SZgJM2UPiZD9" target="_blank">
+          <span class="zh-only">倫敦大酒樓</span><span class="en-only">London Chinese Restaurant</span>
+        </a>
+        <div class="row-note zh-only">推車點心 · 老香港飲茶文化</div>
+        <div class="row-note en-only">Trolley dim sum · Traditional Hong Kong yum cha</div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">11:35</span><span class="row-t-dur">1h 30m</span><span class="type-badge badge-plain zh-only">逛街</span><span class="type-badge badge-plain en-only">Shopping</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/4DTW3kih8BteudHW9" target="_blank">
+          <span class="zh-only">朗豪坊</span><span class="en-only">Langham Place</span>
+        </a>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">13:10</span><span class="row-t-dur">40m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/y8znu2gx2igMMXKF8" target="_blank">
+          <span class="zh-only">香港藝術館</span><span class="en-only">Hong Kong Museum of Art</span>
+        </a>
+        <div class="row-tx zh-only">MTR 旺角→尖沙咀 10 分 + 步行 5 分</div>
+        <div class="row-tx en-only">MTR Mong Kok→TST 10 min + 5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">13:55</span><span class="row-t-dur">40m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/hm6FF56qXCzZgSir6" target="_blank">
+          <span class="zh-only">前九廣鐵路鐘樓</span><span class="en-only">Former KCR Clock Tower</span>
+        </a>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">14:40</span><span class="row-t-dur">30m</span><span class="type-badge badge-plain zh-only">逛街</span><span class="type-badge badge-plain en-only">Shopping</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/AGGm7bvVSWRf4Sj57" target="_blank">
+          <span class="zh-only">誠品生活 尖沙咀店</span><span class="en-only">eslite spectrum Tsim Sha Tsui</span>
+        </a>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row photo">
+      <div class="row-left"><span class="row-t-val">15:15</span><span class="row-t-dur">30m</span><span class="type-badge badge-photo zh-only">拍照</span><span class="type-badge badge-photo en-only">Photo</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/UkTFB3BZNwLXxq3t6" target="_blank">
+          <span class="zh-only">訊號山花園</span><span class="en-only">Signal Hill Garden</span>
+        </a>
+        <div class="row-tx zh-only">步行 15 分</div>
+        <div class="row-tx en-only">15 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">16:00</span><span class="row-t-dur">1h</span><span class="type-badge badge-plain zh-only">逛街</span><span class="type-badge badge-plain en-only">Shopping</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/tTYL6u8z48oMnzrq8" target="_blank">K11 MUSEA</a>
+        <div class="row-tx zh-only">步行 15 分</div>
+        <div class="row-tx en-only">15 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">17:15</span><span class="row-t-dur">30m</span><span class="type-badge badge-plain zh-only">購物</span><span class="type-badge badge-plain en-only">Shopping</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/RtwTxwm8Nd4CjT39A" target="_blank">
+          <span class="zh-only">ISSUE 香港手信店</span><span class="en-only">ISSUE Hong Kong Souvenir Store</span>
+        </a>
+        <div class="row-tx zh-only">步行 10 分</div>
+        <div class="row-tx en-only">10 min walk</div>
+      </div>
+    </div>
+
+    <div class="row food">
+      <div class="row-left"><span class="row-t-val">17:55</span><span class="row-t-dur">1h</span><span class="type-badge badge-food zh-only">食物</span><span class="type-badge badge-food en-only">Food</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">買蛋塔</div>
+        <div class="row-name en-only">Buy Egg Tarts</div>
+        <div class="sub-links">
+          <a class="sub-link" href="https://maps.app.goo.gl/qNBRkRzyAd8brp8eA" target="_blank"><span class="sub-link-dot"></span><span class="zh-only">Hashtag B 尖沙咀</span><span class="en-only">Hashtag B (TST)</span></a>
+          <a class="sub-link" href="https://maps.app.goo.gl/BiB8u4sTAApAyJ8i6" target="_blank"><span class="sub-link-dot"></span>Marouf &amp; Puff Bake</a>
+          <a class="sub-link" href="https://maps.app.goo.gl/cQdf3keupYzhvyUAA" target="_blank"><span class="sub-link-dot"></span><span class="zh-only">Bakehouse 尖沙咀</span><span class="en-only">Bakehouse (TST)</span></a>
+        </div>
+        <div class="row-tx zh-only">步行 5 分</div>
+        <div class="row-tx en-only">5 min walk</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">19:00</span><span class="row-t-dur">15m</span><span class="type-badge badge-plain zh-only">行李</span><span class="type-badge badge-plain en-only">Luggage</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">取行李</div>
+        <div class="row-name en-only">Pick up luggage</div>
+        <div class="row-note"><a href="https://maps.app.goo.gl/WkG2HqEvLxdt9P4EA" target="_blank" style="color:var(--ink2);text-decoration:none;font-size:12px;"><span class="zh-only">城景國際</span><span class="en-only">The Cityview</span></a></div>
+        <div class="row-tx zh-only">MTR 15 分</div>
+        <div class="row-tx en-only">MTR 15 min</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">19:30</span><span class="row-t-dur">30m</span><span class="type-badge badge-plain" style="color:#9A5A38">⚠ 機場</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <div class="row-name zh-only">油麻地 → 九龍 → 機場快線</div>
+        <div class="row-name en-only">Yau Ma Tei → Kowloon → Airport Express</div>
+        <div class="row-note zh-only">香港站可辦 In-Town Check-in · <b>20:25 前到機場</b></div>
+        <div class="row-note en-only">In-Town Check-in at HK Station · <b>Arrive airport by 20:25</b></div>
+        <div class="row-tx zh-only">機場快線 HKD 115 · 24 分</div>
+        <div class="row-tx en-only">Airport Express HKD 115 · 24 min</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">20:00</span><span class="row-t-dur">3h 25m</span><span class="type-badge badge-plain zh-only">候機</span><span class="type-badge badge-plain en-only">Boarding</span></div>
+      <div class="row-spine"><div class="dot"></div><div class="vert"></div></div>
+      <div class="row-c">
+        <a class="row-name" href="https://maps.app.goo.gl/3DApw5uom2SpqJyo9" target="_blank">
+          <span class="zh-only">香港國際機場 · T1</span><span class="en-only">HK Intl Airport · T1</span>
+        </a>
+        <div class="row-note zh-only">可在機場逛街</div>
+        <div class="row-note en-only">Plenty of time to shop at the airport</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left"><span class="row-t-val">23:25</span><span class="type-badge badge-plain">HB710</span></div>
+      <div class="row-spine"><div class="dot"></div></div>
+      <div class="row-c" style="border-bottom:none">
+        <div class="row-name zh-only">香港 → 桃園 · 抵達 01:25+1</div>
+        <div class="row-name en-only">HKG → TPE · Arrive 01:25 May 14</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOD ═══ -->
+<section class="info-sec" id="food">
+  <h2 class="sec-title zh-only">食物清單</h2>
+  <h2 class="sec-title en-only">Food List</h2>
+  <div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-utensils"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/PXJxGBgKs5LwuzVg6" target="_blank">發達叉燒</a><a class="f-name en-only" href="https://maps.app.goo.gl/PXJxGBgKs5LwuzVg6" target="_blank">FAT J Char Siu</a><div class="f-desc zh-only">西班牙黑毛豬叉燒 · 豬油撈飯</div><div class="f-desc en-only">Iberico Char Siu · Lard Rice</div></div><div class="f-tag">Day 1</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-bread"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/8CRiHV2iZ5wK5MnX8" target="_blank">Bakehouse 山頂廣場</a><a class="f-name en-only" href="https://maps.app.goo.gl/8CRiHV2iZ5wK5MnX8" target="_blank">Bakehouse The Peak</a><div class="f-desc zh-only">蛋塔</div><div class="f-desc en-only">Egg Tart</div></div><div class="f-tag">Day 1</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-utensils"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/QtuNatS2MKYYMUnz5" target="_blank">竺扶大班燒味</a><a class="f-name en-only" href="https://maps.app.goo.gl/QtuNatS2MKYYMUnz5" target="_blank">Chukfo Taipan Restaurant</a><div class="f-desc zh-only">叉燒燒鵝飯</div><div class="f-desc en-only">Char Siu · Roast Goose Rice</div></div><div class="f-tag">Day 2</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-utensils"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/XMqWADSpASz3U2oPA" target="_blank">澳洲牛奶公司</a><a class="f-name en-only" href="https://maps.app.goo.gl/XMqWADSpASz3U2oPA" target="_blank">Australia Dairy Company</a><div class="f-desc zh-only">炒蛋多士 · 鮮奶茶</div><div class="f-desc en-only">Scrambled Egg Toast · Fresh Milk Tea</div></div><div class="f-tag">Day 2</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-utensils"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/wKrHc6GcCtuHPeBN9" target="_blank">麥文記麵家</a><a class="f-name en-only" href="https://maps.app.goo.gl/wKrHc6GcCtuHPeBN9" target="_blank">Mak Man Kee Noodle Shop</a><div class="f-desc zh-only">鮮蝦餛飩麵</div><div class="f-desc en-only">Shrimp Wonton Noodle</div></div><div class="f-tag">Day 2</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-bread"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/ZFxC5DW4NyPTiXNs5" target="_blank">祥興記上海生煎包</a><a class="f-name en-only" href="https://maps.app.goo.gl/ZFxC5DW4NyPTiXNs5" target="_blank">Cheung Hing Kee Shanghai Pan Fried Buns</a><div class="f-desc zh-only">現煎生煎包</div><div class="f-desc en-only">Fresh pan-fried buns</div></div><div class="f-tag">Day 3</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-coffee"/></svg></div><div class="f-body"><a class="f-name" href="https://maps.app.goo.gl/raLDWFTQgPMFEHEHA" target="_blank">Cupping Room Coffee</a><div class="f-desc zh-only">海景落地窗咖啡廳</div><div class="f-desc en-only">Harbour view café</div></div><div class="f-tag">Day 3</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-utensils"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/mE88vrE8rc1TZuw59" target="_blank">稻成亞丁</a><a class="f-name en-only" href="https://maps.app.goo.gl/mE88vrE8rc1TZuw59" target="_blank">Dab-pa Peking &amp; Szechuan</a><div class="f-desc zh-only">北京烤鴨</div><div class="f-desc en-only">Peking Duck</div></div><div class="f-tag">Day 4</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-teapot"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/vPdK1SZgJM2UPiZD9" target="_blank">倫敦大酒樓</a><a class="f-name en-only" href="https://maps.app.goo.gl/vPdK1SZgJM2UPiZD9" target="_blank">London Chinese Restaurant</a><div class="f-desc zh-only">推車點心</div><div class="f-desc en-only">Trolley Dim Sum</div></div><div class="f-tag">Day 5</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-bread"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/qNBRkRzyAd8brp8eA" target="_blank">Hashtag B 尖沙咀</a><a class="f-name en-only" href="https://maps.app.goo.gl/qNBRkRzyAd8brp8eA" target="_blank">Hashtag B (Tsim Sha Tsui)</a><div class="f-desc zh-only">蛋塔</div><div class="f-desc en-only">Egg Tart</div></div><div class="f-tag">Day 5</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-bread"/></svg></div><div class="f-body"><a class="f-name" href="https://maps.app.goo.gl/BiB8u4sTAApAyJ8i6" target="_blank">Marouf &amp; Puff Bake</a><div class="f-desc zh-only">蛋塔</div><div class="f-desc en-only">Egg Tart</div></div><div class="f-tag">Day 5</div></div>
+    <div class="frow"><div class="f-ico"><svg class="ic ic-lg"><use href="#ic-bread"/></svg></div><div class="f-body"><a class="f-name zh-only" href="https://maps.app.goo.gl/cQdf3keupYzhvyUAA" target="_blank">Bakehouse 尖沙咀</a><a class="f-name en-only" href="https://maps.app.goo.gl/cQdf3keupYzhvyUAA" target="_blank">Bakehouse (Tsim Sha Tsui)</a><div class="f-desc zh-only">蛋塔</div><div class="f-desc en-only">Egg Tart</div></div><div class="f-tag">Day 5</div></div>
+  </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="info-sec" id="info">
+  <h2 class="sec-title zh-only">備注</h2>
+  <h2 class="sec-title en-only">Info</h2>
+  <div>
+    <div class="irow"><div class="irow-lbl zh-only">八達通</div><div class="irow-lbl en-only">Octopus</div><div class="irow-val zh-only">機場領取 · <b>HKD 150</b>（含 100 儲值）</div><div class="irow-val en-only">Pick up at airport · <b>HKD 150</b> (incl. HKD 100 stored value)</div></div>
+    <div class="irow"><div class="irow-lbl zh-only">天星小輪</div><div class="irow-lbl en-only">Star Ferry</div><div class="irow-val zh-only">尖沙咀 ⭤ 中環 · 7 分 · <b>HKD 4.2</b> 上層</div><div class="irow-val en-only">TST ⭤ Central · 7 min · <b>HKD 4.2</b> upper deck</div></div>
+    <div class="irow"><div class="irow-lbl zh-only">山頂纜車</div><div class="irow-lbl en-only">Peak Tram</div><div class="irow-val zh-only"><b>HKD 88 來回</b> · 提前網上購票</div><div class="irow-val en-only"><b>HKD 88 return</b> · Book online in advance</div></div>
+    <div class="irow"><div class="irow-lbl zh-only">昂坪360</div><div class="irow-lbl en-only">Ngong Ping</div><div class="irow-val zh-only"><b>10:00</b> 開放 · 去程水晶艙 + 回程普通艙</div><div class="irow-val en-only">Opens <b>10:00</b> · Crystal Plus up + Standard return</div></div>
+    <div class="irow"><div class="irow-lbl zh-only">機場快線</div><div class="irow-lbl en-only">Airport Exp.</div><div class="irow-val zh-only">機場 ⭤ 香港站 · <b>24 分</b> · <b>HKD 115</b></div><div class="irow-val en-only">Airport ⭤ HK Station · <b>24 min</b> · <b>HKD 115</b></div></div>
+    <div class="irow"><div class="irow-lbl zh-only">天氣</div><div class="irow-lbl en-only">Weather</div><div class="irow-val zh-only">5月 <b>28–33°C</b> · 潮濕</div><div class="irow-val en-only">May <b>28–33°C</b> · Humid</div></div>
+    <div class="irow"><div class="irow-lbl zh-only">日落</div><div class="irow-lbl en-only">Sunset</div><div class="irow-val zh-only">5月約 <b>18:55</b> · 黃金時段 17:45–19:15</div><div class="irow-val en-only">May approx. <b>18:55</b> · Golden hour 17:45–19:15</div></div>
+    <div class="irow"><div class="irow-lbl zh-only">回程班機</div><div class="irow-lbl en-only">Return</div><div class="irow-val zh-only">HB710 · 23:25 起飛 · <b>20:25 前到機場</b></div><div class="irow-val en-only">HB710 · Departs 23:25 · <b>Arrive airport by 20:25</b></div></div>
+  </div>
+</section>
+
+<footer>
+  <strong>🇭🇰 Hong Kong 2026</strong><br>
+  <a class="footer-ig" href="https://www.instagram.com/thechrisxc/" target="_blank">@THECHRISXC</a>
+</footer>
+
+<script>
+function setLang(lang) {
+  const app = document.getElementById('app');
+  app.className = 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === (lang === 'zh' ? '中文' : 'EN'));
+  });
+}
+
+const navLinks = document.querySelectorAll('.nav a');
+const sections = Array.from(document.querySelectorAll('section[id], .info-sec[id]'));
+
+function updateNav() {
+  const scrollY = window.scrollY + 100;
+  let current = null;
+  for (const s of sections) {
+    if (s.offsetTop <= scrollY) current = s;
+  }
+  navLinks.forEach(a => {
+    const href = a.getAttribute('href').replace('#', '');
+    a.classList.toggle('on', current && current.id === href);
+  });
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
+navLinks.forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').replace('#', '');
+    const target = document.getElementById(id);
+    if (target) {
+      const navH = document.querySelector('.nav').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</div>
+</body>
+</html>
